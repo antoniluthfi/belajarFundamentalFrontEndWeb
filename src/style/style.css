@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    background: linear-gradient(#9ad4ed, white, #9ad4ed);
+}
+nav-bar {
+    display: block;
+    background: #0082e6;
+    height: 80px;
+    width: 100%;
+    z-index: 3;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 1%;
+}
+
+/* bagian search-bar */
+search-bar > input {
+    position: relative;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .5s;
+}
+search-bar > input[type="text"] {
+    background: #fff;
+    width: 70%;
+    height: 50px;
+    border: 1px solid #ffc107;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 25px 0 0 25px;
+}
+search-bar > input[type="submit"] {
+    position: relative;
+    left: -5px;
+    border-radius: 0 25px 25px 0;
+    width: 29%;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #ffc107;
+    color: #fff;
+}
+search-bar > input[type="submit"]:hover {
+    background: #ff5722;
+}
+
+/* efek hover */
+ul#animalsList li{ 
+    -webkit-transition-duration: 0.5s; 
+    -moz-transition-duration: 0.5s; 
+    -o-transition-duration: 0.5s; 
+    border-radius: 7px;
+}
+ul#animalsList li:hover { 
+     -webkit-transform:scale(1.03); 
+     -moz-transform:scale(1.03); 
+    -o-transform:scale(1.03); 
+    box-shadow: 3px 3px gray;
+}
+
+/* bagian list */
+#animalsList {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+    margin-top: 40px;
+}
+.animal {
+    list-style-type: none;
+    background: linear-gradient(#91e675, #d1bc71);
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas:
+        'name'
+        'image'
+        'other';
+    text-align: left;
+}
+.animal > h2 {
+    grid-area: name;
+    margin-bottom: 0px;
+}
+.animal > img {
+    object-fit: contain;
+    border-radius: 7px;
+    grid-area: image;
+}
+.animal p {
+    color: red;
+}
+.animal a,
+.animal h4 {
+    color: #0082e6;
+}
+.animal h3,
+.animal h4,
+.animal p {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Acme', sans-serif;
+}
+/* bagian footer */
+footer {
+    background-color: #0082e6;
+}
+footer p {
+    color: white;
+    font-size: 15pt;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* bagian responsibilitas */
+
+@media screen and (min-width: 320px) and (max-width: 409px) {
+    .container {
+        width: 90%;
+    }
+    search-bar input[type="submit"] {
+        width: 26%;
+    }
+    .animal {
+        display: block;
+    }
+}
+@media screen and (min-width: 410px) and (max-width: 915px) {
+    .container {
+        margin: 0 auto;
+    }
+    search-bar input[type="text"] {
+        width: 69%;
+    }
+    search-bar input[type="submit"] {
+        width: 27%;
+    }
+}
